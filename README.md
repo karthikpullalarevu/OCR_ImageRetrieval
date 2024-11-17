@@ -13,7 +13,7 @@
      1. To perform OCR and get the response image: 
 
 ```bash
-     curl --location 'http://43.205.49.236:6000/predict/readDocument' \
+curl --location 'http://43.205.49.236:6000/predict/readDocument' \
            --form 'image=@"/Users/karthik/Downloads/506888300_506888301.jpg"' \
            --form 'ocr_engine="azure"'
  ```
@@ -21,7 +21,7 @@
 2. To download a JSON with the extractions and NER/POS tags: (change the ocr_engine: 'google', 'azure')
         
 ```bash
-      curl --location 'http://43.205.49.236:6000/predict/getJSON' \
+curl --location 'http://43.205.49.236:6000/predict/getJSON' \
       --form 'image=@"/Users/karthik/Downloads/506888300_506888301.jpg"' \
       --form 'ocr_engine="azure"'
 ```
@@ -42,14 +42,14 @@
    Check System status:
 
 ```bash
-  curl --location 'http://43.205.49.236:6050/healthcheck'
+curl --location 'http://43.205.49.236:6050/healthcheck'
 ```
 
 2. POST /process-directory
    Process a directory containing documents concurrently.: 
 
 ```bash
-  curl --location 'http://43.205.49.236:6050/process-directory' --header 'Content-Type: application/json' \
+curl --location 'http://43.205.49.236:6050/process-directory' --header 'Content-Type: application/json' \
   --data '{"directory_path": "/src/dataset/test","max_workers": 4,"batch_size": 20}'
  ```
 
@@ -57,14 +57,14 @@
    Retrieve the summary of a processed document by its filename.
         
 ```bash
-   curl -X 'GET' 'http://43.205.49.236:6050/summary/document_name.jpg'
+curl -X 'GET' 'http://43.205.49.236:6050/summary/document_name.jpg'
 ```
 
 4. GET /search/semantic:
    Perform a semantic search on the processed documents.
         
 ```bash
-   curl -X 'GET' 'http://43.205.49.236:6050/search/semantic?query=chocolate+factory&k=5'
+curl -X 'GET' 'http://43.205.49.236:6050/search/semantic?query=chocolate+factory&k=5'
 ```
 
 
@@ -72,7 +72,7 @@
    Search for documents containing a specific keyword.
         
 ```bash
-   curl -X 'GET' 'http://43.205.49.236:6050/search/keyword?keyword=advertisement'
+curl -X 'GET' 'http://43.205.49.236:6050/search/keyword?keyword=advertisement'
 ```
 
       
