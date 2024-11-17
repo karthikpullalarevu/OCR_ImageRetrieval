@@ -1,0 +1,24 @@
+services:
+  ocr_service:
+    working_dir: /src
+    command: ["gunicorn", "-w", "2", "--timeout","400","-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:6000", "main:app"]
+    # command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8082", "--workers", "8"]
+    init: true
+    tty: true
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+
+    container_name: ocr_service
+    ports:
+    - "6000:6000"
+    volumes:
+    - ~/tmp:/tmp
+    - ./src:/src
+    - /mnt/resume-data/document:/document
+
+version: '2.3'
