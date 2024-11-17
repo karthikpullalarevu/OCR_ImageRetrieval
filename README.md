@@ -30,3 +30,38 @@
    </p>
       
 </details>
+
+<h2>Task 2 : Document Search & Extraction</h2>
+
+<details>
+<summary>Steps to hit the endpoint. </summary> 
+    
+   <p>
+     <br><br>
+     1. POST /process-directory
+Process a directory containing documents concurrently.: 
+Request Body:
+        
+```bash
+     curl -X 'POST' \
+  'http://43.205.49.236:6050/process-directory' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "directory_path": "/path/to/directory",
+  "max_workers": 3,
+  "batch_size": 20
+}'
+ ```
+
+2. GET /summary/{filename}
+   Retrieve the summary of a processed document by its filename.
+        
+```bash
+      curl -X 'GET' \
+  'http://43.205.49.236:6050/summary/document_name.jpg'
+```
+      
+<br><br>
+   </p>
+      
+</details>
