@@ -39,9 +39,8 @@
    <p>
      <br><br>
 1. POST /process-directory
-Process a directory containing documents concurrently.: 
-Request Body:
-        
+   Process a directory containing documents concurrently.: 
+
 ```bash
   curl -X 'POST' 'http://43.205.49.236:6050/process-directory' -H 'Content-Type: application/json' \
   -d '{"directory_path": "/path/to/directory","max_workers": 3,"batch_size": 20}'
