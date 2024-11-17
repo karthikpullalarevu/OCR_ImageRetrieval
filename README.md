@@ -11,18 +11,22 @@
    <p>
      <br><br>
      1. To perform OCR and get the response image: 
-     ```bash
-      curl --location 'http://43.205.49.236:6000/predict/readDocument' \
+
+```bash
+curl --location 'http://43.205.49.236:6000/predict/readDocument' \
       --form 'image=@"/Users/karthik/Downloads/506888300_506888301.jpg"' \
       --form 'ocr_engine="azure"'
-      ```
+```
+
      <br><br>
      2. To download a JSON with the extractions and NER/POS tags: (change the ocr_engine: 'google', 'azure')
-     ```bash
+        
+```bash
       curl --location 'http://43.205.49.236:6000/predict/getJSON' \
       --form 'image=@"/Users/karthik/Downloads/506888300_506888301.jpg"' \
       --form 'ocr_engine="azure"'
-      ```
+```
+      
      <br><br>
    </p>
       
