@@ -49,8 +49,10 @@
    Process a directory containing documents concurrently.: 
 
 ```bash
-  curl -X 'POST' 'http://43.205.49.236:6050/process-directory' -H 'Content-Type: application/json' \
-  -d '{"directory_path": "/path/to/directory","max_workers": 3,"batch_size": 20}'
+  curl --location 'http://43.205.49.236:6050/process-directory' --header 'Content-Type: application/json' \
+  --data '{"directory_path": "/src/dataset/test",
+  "max_workers": 4,
+  "batch_size": 20}'
  ```
 
 3. GET /summary/{filename}
