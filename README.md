@@ -39,7 +39,7 @@
    <p>
      <br><br>
 1. GET /healthcheck
-   Check System status.
+   Check System status:
 
 ```bash
   curl --location 'http://43.205.49.236:6050/healthcheck'
@@ -53,14 +53,14 @@
   --data '{"directory_path": "/src/dataset/test","max_workers": 4,"batch_size": 20}'
  ```
 
-3. GET /summary/{filename}
+3. GET /summary/{filename}:
    Retrieve the summary of a processed document by its filename.
         
 ```bash
    curl -X 'GET' 'http://43.205.49.236:6050/summary/document_name.jpg'
 ```
 
-4. GET /search/semantic
+4. GET /search/semantic:
    Perform a semantic search on the processed documents.
         
 ```bash
@@ -68,7 +68,7 @@
 ```
 
 
-5.  GET /search/keyword
+5.  GET /search/keyword:
    Search for documents containing a specific keyword.
         
 ```bash
