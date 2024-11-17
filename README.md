@@ -43,23 +43,32 @@ Process a directory containing documents concurrently.:
 Request Body:
         
 ```bash
-     curl -X 'POST' \
-  'http://43.205.49.236:6050/process-directory' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "directory_path": "/path/to/directory",
-  "max_workers": 3,
-  "batch_size": 20
-}'
+  curl -X 'POST' 'http://43.205.49.236:6050/process-directory' -H 'Content-Type: application/json' \
+  -d '{"directory_path": "/path/to/directory","max_workers": 3,"batch_size": 20}'
  ```
 
 2. GET /summary/{filename}
    Retrieve the summary of a processed document by its filename.
         
 ```bash
-      curl -X 'GET' \
-  'http://43.205.49.236:6050/summary/document_name.jpg'
+   curl -X 'GET' 'http://43.205.49.236:6050/summary/document_name.jpg'
 ```
+
+3. GET /search/semantic
+   Perform a semantic search on the processed documents.
+        
+```bash
+   curl -X 'GET' 'http://43.205.49.236:6050/search/semantic?query=chocolate+factory&k=5'
+```
+
+
+4.  GET /search/keyword
+   Search for documents containing a specific keyword.
+        
+```bash
+   curl -X 'GET' 'http://43.205.49.236:6050/search/keyword?keyword=advertisement'
+```
+
       
 <br><br>
    </p>
