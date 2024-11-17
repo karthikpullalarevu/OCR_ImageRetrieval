@@ -38,7 +38,7 @@
     
    <p>
      <br><br>
-     1. POST /process-directory
+1. POST /process-directory
 Process a directory containing documents concurrently.: 
 Request Body:
         
