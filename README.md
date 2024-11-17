@@ -50,9 +50,7 @@
 
 ```bash
   curl --location 'http://43.205.49.236:6050/process-directory' --header 'Content-Type: application/json' \
-  --data '{"directory_path": "/src/dataset/test",
-  "max_workers": 4,
-  "batch_size": 20}'
+  --data '{"directory_path": "/src/dataset/test","max_workers": 4,"batch_size": 20}'
  ```
 
 3. GET /summary/{filename}
